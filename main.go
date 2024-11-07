@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Info-Gator/src/system"
 	"fmt"
 	"log"
 	"os"
@@ -10,7 +11,10 @@ import (
 )
 
 func main() {
-	sysRep()
+	err := System.InitOS()
+	if err != nil {
+		log.Fatalf("Error: %v\n", err)
+	}
 }
 
 func sysRep() {
